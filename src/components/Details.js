@@ -2,7 +2,7 @@ import React from 'react'
 import {ProductConsumer} from '../context';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faShoppingCart, faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
 const Details = () => {
  return (
@@ -92,9 +92,23 @@ const Details = () => {
              </tbody>
            </table>
          </div>
-         <button type="button" className="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-         <button type="button" className="btn btn-light btn-md mr-1 mb-2"><i
-             className="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+
+          <div className="row">
+            <Link to='/'>
+              <button type="button" className="btn btn-primary btn-md mr-1 mb-2">Return Home</button>
+            </Link>
+           
+            {
+              !inCart ? (<button onClick={() => value.addToCart(id)} type="button" className="btn btn-secondary btn-md mr-1 mb-2"> 
+                Add To Cart <span/>
+                <FontAwesomeIcon icon={faCartPlus}/>
+              </button>) : (
+                <button type="button" className="btn btn-light btn-md mr-1 mb-2" disabled>
+                <FontAwesomeIcon icon={faShoppingCart}/> <span/>
+                  In Cart
+                </button>)
+            }
+          </div>
        </div>
          )
         }}

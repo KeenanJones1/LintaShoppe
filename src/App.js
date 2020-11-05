@@ -2,10 +2,10 @@ import './App.css';
 import React from 'react';
 import Layout from './hocs/Layout';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Details from './components/Details'
 import Home from './components/Home';
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
+import Modal from './components/Modal';
 
 class App extends React.Component {
 
@@ -19,6 +19,7 @@ class App extends React.Component {
             <Route exact path="/details" render={() => <ProductDetails />} />
           </Switch>
         </Layout>
+        <Modal />
       </Router>
     );
   }
