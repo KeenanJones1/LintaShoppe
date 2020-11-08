@@ -21,7 +21,11 @@ export default class Product extends Component {
                     </div>
                 <div className="product-content">
                     <button className="cart-btn" 
-                    onClick={() => value.addToCart(id), () => value.openModal(id)}
+                    onClick={() => {
+                        value.addToCart(id); value.openModal(id);
+                    }}
+
+                    
                     disabled={inCart ? true : false}>
                         { inCart ? (<p className="h5 text-capitalize mb-0">in Cart</p>) : 
                         (<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -43,7 +43,7 @@ class ProductProvider extends Component {
  }
 
  addToCart = (id) => {
-  let tempProducts = [...this.state.products];
+  let tempProducts = [...this.state.products]
   const index = tempProducts.indexOf(this.getItem(id));
   const product = tempProducts[index];
   product.inCart = true; 
@@ -54,7 +54,7 @@ class ProductProvider extends Component {
   this.setState({
     products: tempProducts,
     cart: [...this.state.cart, product]
-  }, () => console.log(this.state))
+  })
  }
 
  openModal = (id) => {
