@@ -13,24 +13,7 @@ const Details = () => {
         <div className="col-md-6">
          <h5>{title}</h5>
          <p className="mb-2 text-muted text-uppercase small">Shirts</p>
-         <ul className="rating">
-           <li>
-             <FontAwesomeIcon icon={faStar} />
-           </li>
-           <li>
-             <FontAwesomeIcon icon={faStar} />
-           </li>
-           <li>
-             <FontAwesomeIcon icon={faStar} />
-           </li>
-           <li>
-             <FontAwesomeIcon icon={faStar} />
-           </li>
-           <li>
-           <FontAwesomeIcon icon={faStar} />
-           </li>
-         </ul>
-         <p><span className="mr-1"><strong>{price}</strong></span></p>
+         <p><span className="mr-1"><strong> {`$ ${price}`}</strong></span></p>
          <p className="pt-1">{info}</p>
          <div className="table-responsive">
            <table className="table table-sm table-borderless mb-0">
@@ -61,11 +44,7 @@ const Details = () => {
                <tr>
                  <td className="pl-0">
                    <div className="def-number-input number-input safari_only mb-0">
-                     <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                       className="minus"></button>
-                     <input className="quantity" min="0" name="quantity" value="1" type="number"/>
-                     <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                       className="plus"></button>
+                     <input className="quantity" min="1" defaultValue="1" name="quantity"  type="number"/>
                    </div>
                  </td>
                  <td>
