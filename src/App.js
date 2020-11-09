@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import ProductDetails from './components/ProductDetails';
 import Modal from './components/Modal';
+import Default from './components/Default'
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
             <Route exact path="/" render={() => <Home />}/>
             <Route exact path='/cart' render={() => <Cart />} />
             <Route exact path="/details" render={() => <ProductDetails />} />
+            <Route component={Default} />
           </Switch>
         </Layout>
         <Modal />
